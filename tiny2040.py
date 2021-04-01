@@ -1,14 +1,3 @@
-import time
-import machine
-from machine import Pin
-from machine import PWM
-
-class Tiny2040:
-    def __init__(self, freq, duty):
-        self.rgb_dict = {"red": 18, "grn": 19, "blu": 20}
-        if freq is None:
-            self.freq = 1000 
-        else:import time
 import machine
 from machine import Pin
 from machine import PWM
