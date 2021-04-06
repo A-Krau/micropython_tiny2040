@@ -1,4 +1,3 @@
-import machine
 from machine import Pin
 from machine import PWM
 #import scale
@@ -16,7 +15,7 @@ class Tiny2040:
         self.led_freq = led_freq
         self.led_duty = led_duty
         
-        #set up all pins associated with RBB led.
+        #set up all pins associated with RGB led.
         self.red = PWM(Pin(self.rgb_dict["red"]))
         self.grn = PWM(Pin(self.rgb_dict["grn"]))
         self.blu = PWM(Pin(self.rgb_dict["blu"]))
@@ -41,23 +40,23 @@ class Tiny2040:
         self.grn.duty_u16(self.rgb["grn"])
         self.blu.duty_u16(self.rgb["blu"])
 
-    def led_blue(self):
+    def led_b(self):
         """Set led to blue"""
         self.blu_dict = {"red": 65536, "grn": 65536, "blu": 0}
         self.red.duty_u16(self.blu_dict["red"])
         self.grn.duty_u16(self.blu_dict["grn"])
         self.blu.duty_u16(self.blu_dict["blu"])
 
-    def led_red(self):
+    def led_r(self):
         """Set led to red"""
         self.red_dict = {"red": 0, "grn": 65536, "blu": 65536}
         self.red.duty_u16(self.red_dict["red"])
         self.grn.duty_u16(self.red_dict["grn"])
         self.blu.duty_u16(self.red_dict["blu"])
 
-    def led_green(self):
+    def led_g(self):
         """Set led to green"""
-        self.green_dict = {"red": 0, "grn": 65536, "blu": 65536}
+        self.green_dict = {"red": 65536, "grn": 0, "blu": 65536}
         self.red.duty_u16(self.green_dict["red"])
         self.grn.duty_u16(self.green_dict["grn"])
         self.blu.duty_u16(self.green_dict["blu"])
@@ -75,3 +74,5 @@ class Tiny2040:
         self.red.duty_u16(self.on_dict["red"])
         self.grn.duty_u16(self.on_dict["grn"])
         self.blu.duty_u16(self.on_dict["blu"])
+
+
