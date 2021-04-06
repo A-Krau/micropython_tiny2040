@@ -28,10 +28,10 @@ class Tiny2040:
         self.blu.duty_u16(self.rgb["blu"])
 
     def led_blue(self):
-        self.blu = {"red": 65536, "grn": 65536, "blu": 0}
-        self.red.duty_u16(self.blu["red"])
-        self.grn.duty_u16(self.blu["grn"])
-        self.blu.duty_u16(self.blu["blu"])
+        self.blu_dict = {"red": 65536, "grn": 65536, "blu": 0}
+        self.red.duty_u16(self.blu_dict["red"])
+        self.grn.duty_u16(self.blu_dict["grn"])
+        self.blu.duty_u16(self.blu_dict["blu"])
 
     def led_red(self):
         self.red_dict = {"red": 0, "grn": 65536, "blu": 65536}
