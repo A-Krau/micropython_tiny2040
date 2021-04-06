@@ -1,13 +1,16 @@
-from machine import Pin
-from machine import PWM
-import time
 from tiny2040 import Tiny2040
+from time import sleep
 
-led = Tiny2040(None,None)
+led = Tiny2040()
 
+led.off()
 
 while True:
-    led.color(65532, 65532, 0)
-    time.sleep(1)
-    led.color(65532, 65532, 65532)
-    time.sleep(1)
+    led.on()
+    sleep(1)
+    led.led_r()
+    sleep(1)
+    led.led_g()
+    sleep(1)
+    led.led_b()
+    sleep(1)
